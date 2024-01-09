@@ -12,9 +12,9 @@ export function RectangleBox() {
 
 const rectangleStyle = StyleSheet.create({
   rectangleBox: {
-    width: 80,
+    width: 150,
     height: 150,
-    marginLeft: 10,
+    margin: 10,
     backgroundColor: "#d9d9d9",
     alignItems: "center",
     justifyContent: "center",

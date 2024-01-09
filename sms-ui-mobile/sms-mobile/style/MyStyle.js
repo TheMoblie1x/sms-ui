@@ -19,7 +19,7 @@ export default styles = StyleSheet.create({
   heading1: {
     textAlign: "left",
     marginTop: 20,
-    marginBottom: 80,
+    marginBottom: 20,
     color: "black",
   },
   input: {
@@ -39,5 +39,10 @@ export default styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 40,
+  },
+  containerLoginOp: {
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 20,
   },
 });

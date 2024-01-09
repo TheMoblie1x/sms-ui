@@ -4,11 +4,29 @@ import LoginScreen from "./login";
 import RegisterScreen from "./RegisterCompany";
 import MyStyle from "./style/MyStyle";
 import AddCompany from "./AddCompany";
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={MyStyle.containerMain}>
-      <LoginScreen />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ title: "Login" }}
+        />
+        <Stack.Screen
+          name="AddCompany"
+          component={AddCompany}
+          options={{ title: "Add Company" }}
+        />
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegisterScreen}
+          options={{ title: "Register Company" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
