@@ -45,4 +45,10 @@ export default styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 20,
   },
+  input: {
+    backgroundColor: "white",
+    marginBottom: 20,
+    borderRadius: 20,
+    padding: 5,
+  },
 });

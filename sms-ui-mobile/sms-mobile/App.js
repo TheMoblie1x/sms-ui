@@ -6,6 +6,7 @@ import MyStyle from "./style/MyStyle";
 import AddCompany from "./AddCompany";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AddGroup from "./AddGroup";
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -25,6 +26,11 @@ export default function App() {
           name="RegisterScreen"
           component={RegisterScreen}
           options={{ title: "Register Company" }}
+        />
+        <Stack.Screen
+          name="AddGroup"
+          component={AddGroup}
+          options={{ title: "Add Group" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

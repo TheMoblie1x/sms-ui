@@ -1,11 +1,10 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-const userIcon = require("./icon/fi-bs-user.png");
 
-export function RectangleBox() {
+export function RectangleBox({ textName, icon }) {
   return (
     <View style={rectangleStyle.rectangleBox}>
-      <Image source={userIcon} />
-      <Text style={{ marginTop: 20 }}>Company Name</Text>
+      <Image source={icon} />
+      <Text style={{ marginTop: 20 }}>{textName}</Text>
     </View>
   );
 }
