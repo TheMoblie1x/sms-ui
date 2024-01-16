@@ -7,13 +7,13 @@ export default styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#ebf7fb",
+    backgroundColor: "#86D2EC",
   },
   container: {
     top: 50,
     flex: 1,
     alignItems: "left",
-    backgroundColor: "#ebf7fb",
+    backgroundColor: "##86D2EC",
   },
 
   heading1: {
