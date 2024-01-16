@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MyTextInput } from "./component/MyTextInput";
 import { View, Text, TouchableOpacity } from "react-native";
 import styles from "./style/MyStyle";
-export default function RegisterScreen() {
+export default function RegisterScreen({ navigation }) {
   return (
     <View style={styles.containerMain}>
       <View style={styles.container}>
@@ -33,7 +33,10 @@ export default function RegisterScreen() {
           autoCompType={"address"}
         />
 
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={() => navigation.navigate("AddGroup")}
+        >
           <Text style={{ color: "#fff" }}>Proceed</Text>
         </TouchableOpacity>
       </View>
