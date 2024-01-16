@@ -7,6 +7,7 @@ import AddCompany from "./AddCompany";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AddGroup from "./AddGroup";
+import YourComponent from "./YourComponent";
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
           name="Login"
           component={LoginScreen}
           options={{ title: "Login" }}
-        /> 
+        />
         <Stack.Screen
           name="AddCompany"
           component={AddCompany}
