@@ -15,17 +15,14 @@ export default function AddCompany({ navigation }) {
         </View>
         <View style={styles.secondContainer}>
           <View style={styles.thirdContainer}></View>
-
-          <View style={styles.containerCompany}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("RegisterScreen")}
-            >
-              <View style={styles.rectangleBox}>
-                <Image style={styles.addIcon} source={addComIcon} />
-              </View>
-            </TouchableOpacity>
-            <RectangleBox textName={textComName} icon={userIcon} />
-          </View>
+            <View style={styles.containerCompany}>
+              <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")}>
+                <View style={styles.rectangleBox}>
+                  <Image style={styles.addIcon} source={addComIcon} />
+                </View>
+              </TouchableOpacity>
+              <RectangleBox textName={textComName} icon={userIcon} />
+            </View>
           <View style={styles.containerCompany}>
             <RectangleBox textName={textComName} icon={userIcon} />
             <RectangleBox textName={textComName} icon={userIcon} />
