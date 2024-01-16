@@ -14,7 +14,6 @@ export default function AddGroup({ navigation }) {
         </View>
         <View style={styles.secondContainer}>
           <View style={styles.thirdContainer}></View>
-
           <View style={styles.containerCompany}>
             <TouchableOpacity>
               <View style={styles.rectangleBox}>

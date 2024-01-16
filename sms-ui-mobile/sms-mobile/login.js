@@ -13,7 +13,7 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState("");
   const [userDetails, setUserDetails] = useState([]);
   const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true); 
 
   const getUser = async () => {
     try {
@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
       setUserDetails([json]);
 
       if (json.status == 200) {
-        console.log("Login successfully");
+        console.log(MSG_LOGIN_SUCCESS);
       }
       console.log(json.userId);
     } catch (error) {
