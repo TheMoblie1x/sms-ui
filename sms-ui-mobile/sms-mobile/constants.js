@@ -1,5 +1,8 @@
 //BASE Path goes here
-let BASE_URL = "http://192.168.114.212:8080/";
+//let BASE_URL = "http://192.168.114.212:8080/";
+
+//NEW URL
+let BASE_URL = "http://65.0.170.10:8080/";
 
 //Message goes here
 let ERROR_NO_PATH_FOUND = "error no path found";
