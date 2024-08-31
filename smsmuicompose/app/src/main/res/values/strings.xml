@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">sms-mui-compose</string>
+    <string name="title_activity_companies">CompaniesActivity</string>
 </resources>

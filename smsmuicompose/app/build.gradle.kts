@@ -37,6 +37,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     composeOptions {
@@ -50,7 +51,17 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.androidx.navigation.compose)
+    implementation (libs.glide)
+    //var lifecycle_version = "2.6.0-alpha01"
+    // ViewModel
+    //implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // ViewModel utilities for Compose
+    //implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // LiveData
+    //implementation(libs.androidx.lifecycle.live.data.ktx)
+    implementation(libs.retrofit)
+    implementation (libs.converter.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
