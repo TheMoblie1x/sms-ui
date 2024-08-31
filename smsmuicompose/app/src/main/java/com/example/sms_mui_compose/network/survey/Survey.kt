@@ -9,8 +9,5 @@ public class Survey {
     lateinit var expiryDate:String
     var surveySetId:Int = 0
     var surveyManagerId:Int = 0
-    override fun toString(): String {
-        return "Survey(surveyId=$surveyId, title='$title', status='$status', description='$description', releaseDate='$releaseDate', expiryDate='$expiryDate', surveySetId=$surveySetId, surveyManagerId=$surveyManagerId)"
-    }
 
 }

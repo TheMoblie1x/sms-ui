@@ -8,8 +8,5 @@ public class Groups {
      var companyId:Int? = null
      var email:String? = null
      var address:String? = null
-     override fun toString(): String {
-          return "Groups(groupId=$groupId, creationDate=$creationDate, name=$name, description=$description, companyId=$companyId, email=$email, address=$address)"
-     }
 
 }

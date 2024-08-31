@@ -8,8 +8,4 @@ public class Company {
     lateinit var email:String
     lateinit var address:String
 
-    override fun toString(): String {
-        return "Company(companyId='$companyId', contactInfo='$contactInfo', name='$name', location='$location', email='$email', address='$address')"
-    }
-
 }

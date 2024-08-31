@@ -7,8 +7,5 @@ class SurveySet {
     lateinit var creationDate:String
     var groupId:Int = 0
     lateinit var groupName:String
-    override fun toString(): String {
-        return "SurveySet(surveySetId=$surveySetId, description='$description', name='$name', creationDate='$creationDate', groupId=$groupId, groupName='$groupName')"
-    }
 
 }
