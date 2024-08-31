@@ -17,12 +17,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CompaniesActivity"
+            android:name=".ui.theme.activity.FormBuilderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.activity.SurveyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.activity.SurveySetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.activity.GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.activity.CompaniesActivity"
             android:exported="false"
             android:label="@string/title_activity_companies"
             android:theme="@style/Theme.Smsmuicompose" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.theme.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Smsmuicompose">
