@@ -1,0 +1,70 @@
+
+//
+//fun<T> List<T>.print(){
+//    for (item in this){
+//        println(item.toString())
+//    }
+//
+//}
+
+
+//TODO:API Calls go here
+
+
+//val co = GetAPI.getAPIForClass(Companies::class.java)
+
+//
+//lifecycleScope.launch {
+//    withContext(Dispatchers.IO) { //
+//        allCompaniesList = GetEntityList().getAllCompaniesList()
+//    }
+//    //    allCompaniesList = GetEntityList().getAllCompaniesList()
+//    //print(allCompaniesList)
+////            for (company in allCompaniesList) {
+////                println(company.name)
+////            }
+//}
+//print(allCompaniesList)
+//val apiClient = APIClient.get()
+//val co = apiClient.create(Companies::class.java)
+////        val launch = lifecycleScope.launch { // Use a coroutine scope tied to a lifecycle
+////            val allCompanies = co.getAllCompanies()
+////            for (company in allCompanies.data) {
+////                println(company.name)
+////
+////            }
+////        }
+////
+////
+////        val go = apiClient.create(GroupsAPI::class.java)
+////        val launcher = lifecycleScope.launch { // Use a coroutine scope tied to a lifecycle
+////            val groups = go.getGroupByCompanyID(41)
+////            for (group in groups.data) {
+////                println(group.name)
+////
+////            }
+////        }
+////
+////
+////
+////        val so = apiClient.create(SurveySetsAPI::class.java)
+////        val launcherx = lifecycleScope.launch { // Use a coroutine scope tied to a lifecycle
+////            val groups = so.getSurveySetsByGroupId(1461)
+////            for (group in groups.data) {
+////                println(group.name)
+////                println(group.surveySetId)
+////
+////            }
+////        }
+//
+//
+//
+////        val xo = apiClient.create(SurveysAPI::class.java)
+////        val launcherxx = lifecycleScope.launch { // Use a coroutine scope tied to a lifecycle
+////            val groups = xo.getAllSurveys()
+////            for (group in groups.data) {
+////                //println(group.name)
+////                println(group.surveySetId)
+////
+////            }
+////        }
