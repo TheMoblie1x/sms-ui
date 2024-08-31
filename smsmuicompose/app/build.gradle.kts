@@ -51,6 +51,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
     implementation (libs.glide)
     //var lifecycle_version = "2.6.0-alpha01"
