@@ -3,7 +3,6 @@ package com.example.sms_mui_compose.ui.theme.activity.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -20,11 +19,11 @@ import coil.compose.AsyncImage
 fun ImageCard(
     imageUrl: String,
     text: String,
-    onCardClick: () -> Unit // Custom click event handler
+    onCardClick: () -> Unit, // Custom click event handler
+    modifier :Modifier
 ) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
             .padding(16.dp)
             .clickable { onCardClick() }, // Add click listener
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
