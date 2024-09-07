@@ -1,6 +1,7 @@
 package com.example.sms_mui_compose.ui.theme.activity.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -9,12 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ImageGrid(imageCards: List<ImageCardData>) {
+fun ImageGrid(imageCards: List<ImageCardData>, innerPadding: PaddingValues) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(innerPadding)
     ) {
         items(imageCards.size) { index -> // Use items(count)
             val cardData = imageCards[index]

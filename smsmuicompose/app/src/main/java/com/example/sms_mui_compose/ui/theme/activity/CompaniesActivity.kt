@@ -8,7 +8,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,7 +43,7 @@ val imageLinks =arrayOf(
     "https://www.logo.wine/a/logo/Spotify/Spotify-Logo.wine.svg", // Spotify (direct JPG not available; SVG provided)
     "https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg", // Facebook (direct JPG not available; SVG provided)
     "https://www.logo.wine/a/logo/Samsung/Samsung-Logo.wine.svg", // Samsung (direct JPG not available; SVG provided)
-    "https://www.logo.wine/a/logo/Netflix/Netflix-Logo.wine.svg", // Netflix (direct JPG not available; SVG provided) 
+    "https://www.logo.wine/a/logo/Netflix/Netflix-Logo.wine.svg", // Netflix (direct JPG not available; SVG provided)
     "https://www.logo.wine/a/logo/Google/Google-Logo.wine.svg", // Google (direct JPG not available; SVG provided)
     "https://www.logo.wine/a/logo/Apple/Apple-Logo.wine.svg", // Apple (direct JPG not available; SVG provided)
     "https://www.logo.wine/a/logo/Intel/Intel-Logo.wine.svg", // Intel (direct JPG not available; SVG provided)
@@ -72,6 +79,7 @@ val imageLinks =arrayOf(
 
 
 class CompaniesActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -83,8 +91,18 @@ class CompaniesActivity : ComponentActivity() {
             }
             setContent {
                 SmsmuicomposeTheme {
-                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        ImageGrid(getCard(result))
+                    Scaffold(
+                        modifier = Modifier.fillMaxSize(),
+                        topBar = {TopAppBar(
+                            title = { Text("Companies") },
+                            navigationIcon = {
+                                IconButton(onClick = { /* Handle back button click */ }) {
+                                    Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
+                                }
+                            }
+                        )}
+                        ) { innerPadding ->
+                        ImageGrid(getCard(result), innerPadding)
                         //ImageGrid(getCardData())
                     }
                 }
@@ -108,7 +126,7 @@ private fun String.Toast(c: Context) {
 @Composable
 fun GreetingPreview2() {
     SmsmuicomposeTheme {
-        ImageGrid(getCardData())
+        //ImageGrid(getCardData(), innerPadding)
     }
 }
 fun getCard(result:List<Company>):List<ImageCardData>{
