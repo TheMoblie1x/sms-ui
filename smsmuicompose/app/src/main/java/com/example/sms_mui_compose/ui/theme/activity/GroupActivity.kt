@@ -34,7 +34,7 @@ class GroupActivity : ComponentActivity() {
 @Composable
 fun Greeting4(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Welcome to Companies Activity Where all your compnay data will be shown to you",
+        text = "Welcome to Group Activity Where all your Group data will be shown to you",
         modifier = modifier
     )
 }

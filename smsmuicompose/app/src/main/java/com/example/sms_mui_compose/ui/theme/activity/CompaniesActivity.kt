@@ -1,6 +1,7 @@
 package com.example.sms_mui_compose.ui.theme.activity
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast.makeText
@@ -21,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.company.Company
@@ -30,6 +32,7 @@ import com.example.sms_mui_compose.ui.theme.activity.components.ImageGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.coroutineContext
 
 val imageLinks =arrayOf(
     "https://www.logo.wine/a/logo/Google/Google-Logo.wine.svg", // Google (direct JPG not available; SVG provided)
@@ -79,7 +82,7 @@ val imageLinks =arrayOf(
     "https://www.logo.wine/a/logo/Salesforce/Salesforce-Logo.wine.svg" // Salesforce (direct JPG not available; SVG provided)
 )
 
-
+lateinit var result:List<Company>
 class CompaniesActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,7 +91,7 @@ class CompaniesActivity : ComponentActivity() {
          var allCompaniesList: List<Company>? = null
 
         lifecycleScope.launch {
-            val result = withContext(Dispatchers.IO){
+            result = withContext(Dispatchers.IO){
                 GetEntityList().getAllCompaniesList()
             }
             setContent {
@@ -97,7 +100,7 @@ class CompaniesActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Companies",{finish()}) }
                         ) { innerPadding ->
-                        ImageGrid(getCard(result), innerPadding)
+                        ImageGrid(getCard(this@CompaniesActivity,result), innerPadding)
                         //ImageGrid(getCardData())//Gets card with hardcoded data
                     }
                 }
@@ -115,22 +118,20 @@ private fun String.Toast(c: Context) {
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview2() {
-    SmsmuicomposeTheme {
-        ImageGrid(getCardData(), PaddingValues(12.dp,12.dp))
-    }
-}
-fun getCard(result:List<Company>):List<ImageCardData>{
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview2(context: Context) {
+//    SmsmuicomposeTheme {
+//        ImageGrid(getCardData(context = coroutineContext), PaddingValues(12.dp,12.dp))
+//    }
+//}
+fun getCard(context: Context,result:List<Company>):List<ImageCardData>{
     var list = mutableListOf<ImageCardData>()
     for( i in result){
         val imageCardData = ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = i.name,
-            onCardClick = {
-                Log.d("Click", "getCard() called, Clicked ${i.name}")
-            })
+            onClick = {index-> onClick(context = context,index)})
         list.add(imageCardData)
     }
 
@@ -154,79 +155,81 @@ fun TopBar(text:String,clickEvent:()->Unit){
     )
 }
 
-fun getCardData(): List<ImageCardData> {
+fun getCardData(context: Context): List<ImageCardData> {
     var imageCards = listOf(
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+           onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
+            onClick = {index-> onClick(context = context,index)}),
         ImageCardData(
             imageUrl = "https://static.toiimg.com/thumb/msid-97058029,width-1280,height-720,resizemode-4/97058029.jpg",
             text = "Card Description 1",
-            onCardClick = { /* Handle click */ }),
-        // Add more ImageCardData objects as needed
+           onClick = {index-> onClick(context = context,index)}),
+        )
+        for( i in 0..<imageCards.size){
+                imageCards[i].imageUrl = imageLinks[i]
+        }
+        return imageCards
+}
 
-    )
-
-    for( i in 0..<imageCards.size){
-        imageCards[i].imageUrl = imageLinks[i]
-    }
-
-    return imageCards
+fun onClick(context:Context,index: Int) {
+    val intent  = Intent(context,GroupActivity::class.java)
+    intent.putExtra("Group", result[index])
+    context.startActivity(intent)
 }

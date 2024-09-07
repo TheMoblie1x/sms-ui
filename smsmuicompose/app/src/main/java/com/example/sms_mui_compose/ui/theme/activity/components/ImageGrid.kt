@@ -20,7 +20,7 @@ fun ImageGrid(imageCards: List<ImageCardData>, innerPadding: PaddingValues) {
         items(imageCards.size) { index -> // Use items(count)
             val cardData = imageCards[index]
      //       ImageCardWithJPGSupport(imageUrl = cardData.imageUrl, text = cardData.text , onCardClick = { cardData.onCardClick }, modifier = Modifier.padding(16.dp))
-            ImageCardWithSVGSupport(imageUrl = cardData.imageUrl, text = cardData.text , onCardClick = { cardData.onCardClick }, modifier = Modifier.padding(16.dp))
+            ImageCardWithSVGSupport(imageUrl = cardData.imageUrl, text = cardData.text , onCardClick = { cardData.onCardClick(index) }, modifier = Modifier.padding(16.dp))
         }
     }
 }

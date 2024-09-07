@@ -4,5 +4,9 @@ package com.example.sms_mui_compose.ui.theme.activity.components
 data class ImageCardData(
     var imageUrl: String,
     val text: String,
-    val onCardClick: () -> Unit
-)
+    val onClick: (Int) -> Unit
+) {
+    fun onCardClick(index: Int) {
+        onClick(index)
+    }
+}
