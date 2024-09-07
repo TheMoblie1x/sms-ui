@@ -13,7 +13,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -52,15 +51,9 @@ android {
 
 dependencies {
     implementation(libs.coil.compose)
+    implementation (libs.coil.svg)
     implementation(libs.androidx.navigation.compose)
     implementation (libs.glide)
-    //var lifecycle_version = "2.6.0-alpha01"
-    // ViewModel
-    //implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    // ViewModel utilities for Compose
-    //implementation(libs.androidx.lifecycle.viewmodel.compose)
-    // LiveData
-    //implementation(libs.androidx.lifecycle.live.data.ktx)
     implementation(libs.retrofit)
     implementation (libs.converter.gson)
     implementation(libs.androidx.core.ktx)

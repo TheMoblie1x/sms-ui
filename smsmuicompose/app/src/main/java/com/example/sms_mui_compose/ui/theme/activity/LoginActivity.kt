@@ -1,5 +1,7 @@
 package com.example.sms_mui_compose.ui.theme.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -53,6 +55,7 @@ class MainActivity : ComponentActivity() {
                     TopAppBar(title = { Text("My App") })
                 }) { innerPadding ->
                     Greeting(
+                        context = this@MainActivity,
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -63,14 +66,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(context: Context,name: String, modifier: Modifier = Modifier) {
     Box(modifier = Modifier.padding(16.dp)) {
         Column(modifier = Modifier.padding(32.dp).fillMaxSize()) {
             Text("Welcome to M1x's SMS")
             Text("Survey Management System")
             EmailTextField()
             PasswordTextField()
-            LoginButtons()
+            LoginButtons(context)
 
         }
     }
@@ -78,7 +81,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun LoginButtons() {
+fun LoginButtons(context: Context) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -91,7 +94,10 @@ fun LoginButtons() {
         // ... Email and Password TextFields would go here ...
 
         Button(
-            onClick = { /* Handle login logic here */ },
+            onClick = { /* Handle login logic here */
+                val intent = Intent(context, CompaniesActivity::class.java)
+                context.startActivity(intent)
+            },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Login")
@@ -157,6 +163,6 @@ fun EmailTextField() {
 @Composable
 fun GreetingPreview() {
     SmsmuicomposeTheme {
-        Greeting("Android")
+        //Greeting(this@MainActivity,"Android")
     }
 }

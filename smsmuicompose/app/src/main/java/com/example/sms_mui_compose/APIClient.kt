@@ -9,5 +9,10 @@ class APIClient {
             return Retrofit.Builder().baseUrl("http://35.154.109.58:8080/").addConverterFactory(
                 GsonConverterFactory.create()).build()
         }
+
+//        fun get():Retrofit{
+//            return Retrofit.Builder().baseUrl("http://127.0.0.1:8080/").addConverterFactory(
+//                GsonConverterFactory.create()).build()
+//        }
     }
 }
