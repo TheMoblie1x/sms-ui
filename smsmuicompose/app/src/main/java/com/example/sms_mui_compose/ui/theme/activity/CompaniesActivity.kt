@@ -81,6 +81,6 @@ fun TopBar(text:String,clickEvent:()->Unit){
 
 fun onClick(context:Context,index: Int) {
     val intent  = Intent(context,GroupActivity::class.java)
-    intent.putExtra("Group", result[index])
+    intent.putExtra("Company", result[index])
     context.startActivity(intent)
 }
