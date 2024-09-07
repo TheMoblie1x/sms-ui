@@ -7,6 +7,7 @@ import android.widget.Toast.makeText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -19,6 +20,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.company.Company
@@ -93,23 +95,14 @@ class CompaniesActivity : ComponentActivity() {
                 SmsmuicomposeTheme {
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
-                        topBar = {TopAppBar(
-                            title = { Text("Companies") },
-                            navigationIcon = {
-                                IconButton(onClick = { /* Handle back button click */ }) {
-                                    Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
-                                }
-                            }
-                        )}
+                        topBar = { TopBar("Companies",{finish()}) }
                         ) { innerPadding ->
                         ImageGrid(getCard(result), innerPadding)
-                        //ImageGrid(getCardData())
+                        //ImageGrid(getCardData())//Gets card with hardcoded data
                     }
                 }
             }
         }
-
-
     }
 }
 
@@ -126,7 +119,7 @@ private fun String.Toast(c: Context) {
 @Composable
 fun GreetingPreview2() {
     SmsmuicomposeTheme {
-        //ImageGrid(getCardData(), innerPadding)
+        ImageGrid(getCardData(), PaddingValues(12.dp,12.dp))
     }
 }
 fun getCard(result:List<Company>):List<ImageCardData>{
@@ -148,6 +141,18 @@ fun getCard(result:List<Company>):List<ImageCardData>{
     return list
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopBar(text:String,clickEvent:()->Unit){
+    return TopAppBar(
+        title = { Text(text) },
+        navigationIcon = {
+            IconButton(onClick = { /* Handle back button click */clickEvent() }) {
+                Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
+            }
+        }
+    )
+}
 
 fun getCardData(): List<ImageCardData> {
     var imageCards = listOf(
