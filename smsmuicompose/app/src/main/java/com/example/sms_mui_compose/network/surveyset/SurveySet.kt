@@ -7,5 +7,4 @@ class SurveySet {
     lateinit var creationDate:String
     var groupId:Int = 0
     lateinit var groupName:String
-
 }
