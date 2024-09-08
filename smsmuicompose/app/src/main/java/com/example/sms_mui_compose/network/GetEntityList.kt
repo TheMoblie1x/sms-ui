@@ -17,7 +17,6 @@ class GetEntityList {
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allCompanies = getAllCompaniesAPI.getAllCompanies()
              data = allCompanies.data
-
         }
         return data
 
@@ -30,7 +29,6 @@ class GetEntityList {
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allGroups = allGroupsAPI.getGroupByCompanyID(companyID)
             data = allGroups.data
-
         }
         return data
 
