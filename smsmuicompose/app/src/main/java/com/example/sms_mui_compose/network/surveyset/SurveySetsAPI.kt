@@ -8,4 +8,7 @@ interface SurveySetsAPI {
     @GET("SurveySetsByGroupId/{groupId}")
     suspend fun getSurveySetsByGroupId(@Path("groupId") groupId: Int): SurveySetsResponse
 
+    @GET("SurveySetsByGroupId/{surveySetID}")
+    suspend fun getSurveySetBySurveySetId(@Path("surveySetID") surveySetID: Int): SurveySetsResponse
+
 }

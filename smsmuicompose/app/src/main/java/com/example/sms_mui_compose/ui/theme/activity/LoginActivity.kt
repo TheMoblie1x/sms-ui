@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SmsmuicomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(),topBar = {
-                    TopAppBar(title = { Text("My App") })
+                    TopAppBar(title = { Text("M1x SMS") })
                 }) { innerPadding ->
                     Greeting(
                         context = this@MainActivity,
@@ -67,17 +67,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(context: Context,name: String, modifier: Modifier = Modifier) {
-    Box(modifier = Modifier.padding(16.dp)) {
+    Box(modifier = Modifier.padding(32.dp)) {
         Column(modifier = Modifier.padding(32.dp).fillMaxSize()) {
             Text("Welcome to M1x's SMS")
             Text("Survey Management System")
             EmailTextField()
             PasswordTextField()
             LoginButtons(context)
-
         }
     }
-
 }
 
 @Composable
@@ -92,7 +90,6 @@ fun LoginButtons(context: Context) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // ... Email and Password TextFields would go here ...
-
         Button(
             onClick = { /* Handle login logic here */
                 val intent = Intent(context, CompaniesActivity::class.java)
@@ -102,9 +99,7 @@ fun LoginButtons(context: Context) {
         ) {
             Text("Login")
         }
-
         Spacer(modifier = Modifier.height(8.dp)) // Add some spacing
-
         TextButton(onClick = { /* Handle forgot password logic here */ }) {
             Text("Forgot Password?")
         }
@@ -137,7 +132,6 @@ fun PasswordTextField() {
 fun EmailTextField() {
     var email by remember { mutableStateOf("") }
     var isValidEmail by remember { mutableStateOf(true) }
-
     OutlinedTextField(
         value = email,
         onValueChange = { newEmail ->
@@ -149,7 +143,6 @@ fun EmailTextField() {
         modifier = Modifier.fillMaxWidth(),
         isError = !isValidEmail
     )
-
     if (!isValidEmail && email.isNotBlank()) {
         Text(
             text = "Invalid email format",

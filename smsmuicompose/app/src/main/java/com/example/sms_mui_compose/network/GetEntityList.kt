@@ -33,11 +33,20 @@ class GetEntityList {
         return data
     }
 
-    public suspend fun getSurveySetByGroupID(groupID:Int): List<SurveySet> {
+    public suspend fun getSurveySetsByGroupID(groupID:Int): List<SurveySet> {
         val allSurveysAPI = apiClient.create(SurveySetsAPI::class.java)
         lateinit var data:List<SurveySet>
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allSurveySets = allSurveysAPI.getSurveySetsByGroupId(groupID)
+            data = allSurveySets.data
+        }
+        return data
+    }
+    public suspend fun getSurveySetBySurveySetID(surveySetID:Int): List<SurveySet> {
+        val allSurveysAPI = apiClient.create(SurveySetsAPI::class.java)
+        lateinit var data:List<SurveySet>
+        val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
+            val allSurveySets = allSurveysAPI.getSurveySetsByGroupId(surveySetID)
             data = allSurveySets.data
         }
         return data
