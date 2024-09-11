@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import com.example.sms_mui_compose.network.company.Company
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
+import com.example.sms_mui_compose.ui.theme.activity.components.CTextField
 
 class MainActivity : ComponentActivity() {
     lateinit var allCompaniesList : List<Company>
@@ -74,6 +75,7 @@ fun Greeting(context: Context,name: String, modifier: Modifier = Modifier) {
             EmailTextField()
             PasswordTextField()
             LoginButtons(context)
+            CTextField("Sample Text Field")
         }
     }
 }

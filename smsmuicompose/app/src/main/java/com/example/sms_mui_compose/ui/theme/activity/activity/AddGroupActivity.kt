@@ -4,13 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.sms_mui_compose.ui.theme.activity.components.CTextField
 import com.example.sms_mui_compose.ui.theme.activity.ui.theme.SmsmuicomposeTheme
 
 class AddGroupActivity : ComponentActivity() {
@@ -20,28 +19,11 @@ class AddGroupActivity : ComponentActivity() {
         setContent {
             SmsmuicomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Group",{finish()}) }) { innerPadding ->
-                    Greeting2(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Row (modifier = Modifier.padding(innerPadding)) {
+                        CTextField("Group Name")
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview2() {
-    SmsmuicomposeTheme {
-        Greeting2("Android")
     }
 }
