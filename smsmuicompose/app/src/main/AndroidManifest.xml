@@ -17,6 +17,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.theme.activity.AddSurveyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_survey"
+            android:theme="@style/Theme.Smsmuicompose" />
+        <activity
+            android:name=".ui.theme.activity.AddSurveySetActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_survey_set"
+            android:theme="@style/Theme.Smsmuicompose" />
+        <activity
+            android:name=".ui.theme.activity.AddGroupActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_group"
+            android:theme="@style/Theme.Smsmuicompose" />
+        <activity
+            android:name=".ui.theme.activity.AddCompanyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.theme.activity.FormBuilderActivity"
             android:exported="true" />
         <activity
@@ -32,9 +50,7 @@
             android:name=".ui.theme.activity.CompaniesActivity"
             android:exported="true"
             android:label="@string/title_activity_companies"
-            android:theme="@style/Theme.Smsmuicompose" >
-
-        </activity>
+            android:theme="@style/Theme.Smsmuicompose" />
         <activity
             android:name=".ui.theme.activity.MainActivity"
             android:exported="true"

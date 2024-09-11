@@ -36,7 +36,9 @@ class SurveySetActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     topBar = { TopBar("Survey Sets",{finish()}) }
                 ) { innerPadding ->
-                    ImageGrid(getSurveyCard(this@SurveySetActivity, resultOfSurveySets), innerPadding)
+                    val intent  = Intent(this@SurveySetActivity,AddSurveySetActivity::class.java)
+                    //eySet//PlusButton(context = this@SurveySetActivity, intent = intent, text = "Add Survey")
+                    ImageGrid("Add Survey",this@SurveySetActivity,getSurveyCard(this@SurveySetActivity, resultOfSurveySets), innerPadding,intent)
                 }
             }
         }

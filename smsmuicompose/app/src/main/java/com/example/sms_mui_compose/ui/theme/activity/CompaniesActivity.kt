@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-lateinit var result:List<Company>
+var result:List<Company>? = null
 class CompaniesActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class CompaniesActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Companies",{finish()}) }
                         ) { innerPadding ->
-                        ImageGrid(getCard(this@CompaniesActivity,result), innerPadding)
+                        ImageGrid("Add Group",this@CompaniesActivity,getCard(this@CompaniesActivity,result!!), innerPadding,Intent(this@CompaniesActivity,AddCompanyActivity::class.java))
                     }
                 }
             }
@@ -81,6 +81,6 @@ fun TopBar(text:String,clickEvent:()->Unit){
 
 fun onClick(context:Context,index: Int) {
     val intent  = Intent(context,GroupActivity::class.java)
-    intent.putExtra("Company", result[index])
+    intent.putExtra("Company", result!![index])
     context.startActivity(intent)
 }

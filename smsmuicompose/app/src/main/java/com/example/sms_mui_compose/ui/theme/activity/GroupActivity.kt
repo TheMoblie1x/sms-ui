@@ -28,7 +28,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.ArrayList
 
-lateinit var resultOfGroups:List<Groups>
+var resultOfGroups:List<Groups>? = null
 class GroupActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +45,9 @@ class GroupActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Groups",{finish()}) }
                     ) { innerPadding ->
-                        ImageGrid(getCard(this@GroupActivity, resultOfGroups), innerPadding)
+                        ImageGrid("Add Survey Set",this@GroupActivity,getCard(this@GroupActivity, resultOfGroups!!), innerPadding,
+                            Intent(this@GroupActivity,AddGroupActivity::class.java)
+                        )
                     }
                 }
             }
@@ -55,10 +57,10 @@ class GroupActivity : ComponentActivity() {
 
 fun getCard(context: Context, result:List<Groups>):List<ImageCardData>{
     var list = mutableListOf<ImageCardData>()
-    for( i in 0..<resultOfGroups.size){
+    for( i in 0..<resultOfGroups!!.size){
         val imageCardData = ImageCardData(
             imageUrl = imageLinks[i],
-            text = resultOfGroups[i].name!!,
+            text = resultOfGroups!![i].name!!,
             onClick = {index-> onGroupItemClick(context = context,index)}
         )
         list.add(imageCardData)
@@ -70,7 +72,7 @@ fun getCard(context: Context, result:List<Groups>):List<ImageCardData>{
 @OptIn(DelicateCoroutinesApi::class)
 fun onGroupItemClick(context:Context, index: Int) {
     val intent  = Intent(context,SurveySetActivity::class.java)
-    val group = resultOfGroups[index]
+    val group = resultOfGroups!![index]
     lateinit var resultOfSurveySets:List<SurveySet>
     GlobalScope.launch {
         resultOfSurveySets = withContext(Dispatchers.IO){
@@ -82,18 +84,6 @@ fun onGroupItemClick(context:Context, index: Int) {
     }
 }
 
-
-@Composable
-fun Greeting4(context: Context,name: String, modifier: Modifier = Modifier) {
-    SmsmuicomposeTheme {
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            //topBar = { TopBar("Groups",{finish()}) }
-        ) { innerPadding ->
-            ImageGrid(getCard(context, resultOfGroups), innerPadding)
-        }
-    }
-}
 
 @Preview(showBackground = true)
 @Composable

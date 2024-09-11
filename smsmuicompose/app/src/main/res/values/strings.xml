@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">sms-mui-compose</string>
     <string name="title_activity_companies">CompaniesActivity</string>
+    <string name="title_activity_add_group">AddGroupActivity</string>
+    <string name="title_activity_add_survey_set">AddSurveySetActivity</string>
+    <string name="title_activity_add_survey">AddSurveyActivity</string>
 </resources>

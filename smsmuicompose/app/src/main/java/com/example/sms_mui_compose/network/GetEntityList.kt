@@ -13,41 +13,41 @@ import kotlinx.coroutines.withContext
 class GetEntityList {
 
     val apiClient = APIClient.get()
-    public suspend fun getAllCompaniesList(): List<Company> {
+    public suspend fun getAllCompaniesList(): List<Company>? {
         val getAllCompaniesAPI = apiClient.create(CompaniesAPI::class.java)
         lateinit var data:List<Company>
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allCompanies = getAllCompaniesAPI.getAllCompanies()
-             data = allCompanies.data
+             data = allCompanies.data?: emptyList()
         }
         return data
     }
 
-    public suspend fun getAllGroupsByCompany(companyID:Int): List<Groups> {
+    public suspend fun getAllGroupsByCompany(companyID:Int): List<Groups>? {
         val allGroupsAPI = apiClient.create(GroupsAPI::class.java)
         lateinit var data:List<Groups>
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allGroups = allGroupsAPI.getGroupByCompanyID(companyID)
-            data = allGroups.data
+            data = allGroups.data?: emptyList()
         }
         return data
     }
 
-    public suspend fun getSurveySetsByGroupID(groupID:Int): List<SurveySet> {
+    public suspend fun getSurveySetsByGroupID(groupID:Int): List<SurveySet>? {
         val allSurveysAPI = apiClient.create(SurveySetsAPI::class.java)
         lateinit var data:List<SurveySet>
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allSurveySets = allSurveysAPI.getSurveySetsByGroupId(groupID)
-            data = allSurveySets.data
+            data = allSurveySets.data?: emptyList()
         }
         return data
     }
-    public suspend fun getSurveySetBySurveySetID(surveySetID:Int): List<SurveySet> {
+    public suspend fun getSurveySetBySurveySetID(surveySetID:Int): List<SurveySet>? {
         val allSurveysAPI = apiClient.create(SurveySetsAPI::class.java)
         lateinit var data:List<SurveySet>
         val launch = withContext(Dispatchers.IO) { // Use a coroutine scope tied to a lifecycle
             val allSurveySets = allSurveysAPI.getSurveySetsByGroupId(surveySetID)
-            data = allSurveySets.data
+            data = allSurveySets.data?: emptyList()
         }
         return data
     }
