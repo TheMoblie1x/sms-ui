@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity
+package com.example.sms_mui_compose.ui.theme.activity.activity
 
 import android.content.Context
 import android.content.Intent
@@ -45,7 +45,9 @@ class CompaniesActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Companies",{finish()}) }
                         ) { innerPadding ->
-                        ImageGrid("Add Group",this@CompaniesActivity,getCard(this@CompaniesActivity,result!!), innerPadding,Intent(this@CompaniesActivity,AddCompanyActivity::class.java))
+                        ImageGrid("Add Group",this@CompaniesActivity,
+                            getCard(this@CompaniesActivity, result!!), innerPadding,Intent(this@CompaniesActivity,
+                                AddCompanyActivity::class.java))
                     }
                 }
             }
@@ -59,7 +61,7 @@ fun getCard(context: Context,result:List<Company>):List<ImageCardData>{
         val imageCardData = ImageCardData(
             imageUrl = imageLinks[i],
             text = result[i].name,
-            onClick = {index-> onClick(context = context,index)}
+            onClick = {index-> onClick(context = context,index) }
         )
         list.add(imageCardData)
     }
@@ -80,7 +82,7 @@ fun TopBar(text:String,clickEvent:()->Unit){
 }
 
 fun onClick(context:Context,index: Int) {
-    val intent  = Intent(context,GroupActivity::class.java)
+    val intent  = Intent(context, GroupActivity::class.java)
     intent.putExtra("Company", result!![index])
     context.startActivity(intent)
 }

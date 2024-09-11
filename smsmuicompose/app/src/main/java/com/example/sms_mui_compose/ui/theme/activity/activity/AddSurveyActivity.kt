@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity
+package com.example.sms_mui_compose.ui.theme.activity.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,16 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
+import com.example.sms_mui_compose.ui.theme.activity.ui.theme.SmsmuicomposeTheme
 
-class SurveyActivity :ComponentActivity() {
+class AddSurveyActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             SmsmuicomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting5(
+                    Greeting7(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -31,17 +31,17 @@ class SurveyActivity :ComponentActivity() {
 }
 
 @Composable
-fun Greeting5(name: String, modifier: Modifier = Modifier) {
+fun Greeting7(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Welcome to Companies Activity Where all your compnay data will be shown to you",
+        text = "Hello $name!",
         modifier = modifier
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview5() {
+fun GreetingPreview8() {
     SmsmuicomposeTheme {
-        Greeting5("Android")
+        Greeting7("Android")
     }
 }

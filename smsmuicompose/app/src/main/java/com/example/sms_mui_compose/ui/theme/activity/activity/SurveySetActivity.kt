@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity
+package com.example.sms_mui_compose.ui.theme.activity.activity
 
 import android.content.Context
 import android.content.Intent
@@ -13,16 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sms_mui_compose.imageLinks
-import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.surveyset.SurveySet
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
 import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
 import com.example.sms_mui_compose.ui.theme.activity.components.ImageGrid
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 lateinit var resultOfSurveySets:ArrayList<SurveySet>
 class SurveySetActivity : ComponentActivity() {
@@ -36,9 +33,10 @@ class SurveySetActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     topBar = { TopBar("Survey Sets",{finish()}) }
                 ) { innerPadding ->
-                    val intent  = Intent(this@SurveySetActivity,AddSurveySetActivity::class.java)
+                    val intent  = Intent(this@SurveySetActivity, AddSurveySetActivity::class.java)
                     //eySet//PlusButton(context = this@SurveySetActivity, intent = intent, text = "Add Survey")
-                    ImageGrid("Add Survey",this@SurveySetActivity,getSurveyCard(this@SurveySetActivity, resultOfSurveySets), innerPadding,intent)
+                    ImageGrid("Add Survey",this@SurveySetActivity,
+                        getSurveyCard(this@SurveySetActivity, resultOfSurveySets), innerPadding,intent)
                 }
             }
         }
@@ -52,7 +50,7 @@ fun getSurveyCard(context: Context, result:ArrayList<SurveySet>):List<ImageCardD
         val imageCardData = ImageCardData(
             imageUrl = imageLinks[i],
             text = result[i].name,
-            onClick = {index-> onSurveyItemClick(context = context,index)}
+            onClick = {index-> onSurveyItemClick(context = context,index) }
         )
         list.add(imageCardData)
     }
@@ -63,7 +61,7 @@ fun getSurveyCard(context: Context, result:ArrayList<SurveySet>):List<ImageCardD
 
 @OptIn(DelicateCoroutinesApi::class)
 fun onSurveyItemClick(context:Context, index: Int) {
-    val intent  = Intent(context,SurveyActivity::class.java)
+    val intent  = Intent(context, SurveyActivity::class.java)
     val surveySet = resultOfSurveySets[index]
     lateinit var resultOfSurveySets:List<SurveySet>
     GlobalScope.launch {

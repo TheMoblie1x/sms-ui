@@ -17,42 +17,42 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.theme.activity.AddSurveyActivity"
+            android:name=".ui.theme.activity.activity.AddSurveyActivity"
             android:exported="false"
             android:label="@string/title_activity_add_survey"
             android:theme="@style/Theme.Smsmuicompose" />
         <activity
-            android:name=".ui.theme.activity.AddSurveySetActivity"
+            android:name=".ui.theme.activity.activity.AddSurveySetActivity"
             android:exported="false"
             android:label="@string/title_activity_add_survey_set"
             android:theme="@style/Theme.Smsmuicompose" />
         <activity
-            android:name=".ui.theme.activity.AddGroupActivity"
+            android:name=".ui.theme.activity.activity.AddGroupActivity"
             android:exported="false"
             android:label="@string/title_activity_add_group"
             android:theme="@style/Theme.Smsmuicompose" />
         <activity
-            android:name=".ui.theme.activity.AddCompanyActivity"
+            android:name=".ui.theme.activity.activity.AddCompanyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.theme.activity.FormBuilderActivity"
+            android:name=".ui.theme.activity.activity.FormBuilderActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.theme.activity.SurveyActivity"
+            android:name=".ui.theme.activity.activity.SurveyActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.theme.activity.SurveySetActivity"
+            android:name=".ui.theme.activity.activity.SurveySetActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.theme.activity.GroupActivity"
+            android:name=".ui.theme.activity.activity.GroupActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.theme.activity.CompaniesActivity"
+            android:name=".ui.theme.activity.activity.CompaniesActivity"
             android:exported="true"
             android:label="@string/title_activity_companies"
             android:theme="@style/Theme.Smsmuicompose" />
         <activity
-            android:name=".ui.theme.activity.MainActivity"
+            android:name=".ui.theme.activity.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Smsmuicompose">

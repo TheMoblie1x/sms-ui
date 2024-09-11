@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity
+package com.example.sms_mui_compose.ui.theme.activity.activity
 
 
 import android.content.Context
@@ -9,9 +9,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
 import com.example.sms_mui_compose.imageLinks
 import com.example.sms_mui_compose.network.GetEntityList
@@ -45,8 +43,9 @@ class GroupActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Groups",{finish()}) }
                     ) { innerPadding ->
-                        ImageGrid("Add Survey Set",this@GroupActivity,getCard(this@GroupActivity, resultOfGroups!!), innerPadding,
-                            Intent(this@GroupActivity,AddGroupActivity::class.java)
+                        ImageGrid("Add Survey Set",this@GroupActivity,
+                            getCard(this@GroupActivity, resultOfGroups!!), innerPadding,
+                            Intent(this@GroupActivity, AddGroupActivity::class.java)
                         )
                     }
                 }
@@ -56,12 +55,12 @@ class GroupActivity : ComponentActivity() {
 }
 
 fun getCard(context: Context, result:List<Groups>):List<ImageCardData>{
-    var list = mutableListOf<ImageCardData>()
+    val list = mutableListOf<ImageCardData>()
     for( i in 0..<resultOfGroups!!.size){
         val imageCardData = ImageCardData(
             imageUrl = imageLinks[i],
             text = resultOfGroups!![i].name!!,
-            onClick = {index-> onGroupItemClick(context = context,index)}
+            onClick = {index-> onGroupItemClick(context = context,index) }
         )
         list.add(imageCardData)
     }
@@ -71,7 +70,7 @@ fun getCard(context: Context, result:List<Groups>):List<ImageCardData>{
 
 @OptIn(DelicateCoroutinesApi::class)
 fun onGroupItemClick(context:Context, index: Int) {
-    val intent  = Intent(context,SurveySetActivity::class.java)
+    val intent  = Intent(context, SurveySetActivity::class.java)
     val group = resultOfGroups!![index]
     lateinit var resultOfSurveySets:List<SurveySet>
     GlobalScope.launch {
@@ -81,14 +80,5 @@ fun onGroupItemClick(context:Context, index: Int) {
         }
         intent.putParcelableArrayListExtra("SurveySets", ArrayList(resultOfSurveySets))
         context.startActivity(intent)
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview4() {
-    SmsmuicomposeTheme {
-        //Greeting4("Android")
     }
 }

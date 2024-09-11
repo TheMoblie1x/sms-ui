@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity
+package com.example.sms_mui_compose.ui.theme.activity.activity
 
 import android.content.Context
 import android.content.Intent

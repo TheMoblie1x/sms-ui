@@ -3,7 +3,7 @@ package com.example.sms_mui_compose
 import android.content.Context
 import android.widget.Toast.makeText
 import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
-import com.example.sms_mui_compose.ui.theme.activity.onClick
+import com.example.sms_mui_compose.ui.theme.activity.activity.onClick
 
 class Constants {
     var BASE_URL = "http://35.154.109.58:8080/"
