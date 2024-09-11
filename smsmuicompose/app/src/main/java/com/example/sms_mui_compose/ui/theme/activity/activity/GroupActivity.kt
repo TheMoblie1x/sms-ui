@@ -43,7 +43,7 @@ class GroupActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Groups",{finish()}) }
                     ) { innerPadding ->
-                        ImageGrid("Add Survey Set",this@GroupActivity,
+                        ImageGrid("Add Group",this@GroupActivity,
                             getCard(this@GroupActivity, resultOfGroups!!), innerPadding,
                             Intent(this@GroupActivity, AddGroupActivity::class.java)
                         )

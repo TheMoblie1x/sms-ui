@@ -45,7 +45,7 @@ class CompaniesActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = { TopBar("Companies",{finish()}) }
                         ) { innerPadding ->
-                        ImageGrid("Add Group",this@CompaniesActivity,
+                        ImageGrid("Add Company",this@CompaniesActivity,
                             getCard(this@CompaniesActivity, result!!), innerPadding,Intent(this@CompaniesActivity,
                                 AddCompanyActivity::class.java))
                     }

@@ -35,7 +35,7 @@ class SurveySetActivity : ComponentActivity() {
                 ) { innerPadding ->
                     val intent  = Intent(this@SurveySetActivity, AddSurveySetActivity::class.java)
                     //eySet//PlusButton(context = this@SurveySetActivity, intent = intent, text = "Add Survey")
-                    ImageGrid("Add Survey",this@SurveySetActivity,
+                    ImageGrid("Add Survey Set",this@SurveySetActivity,
                         getSurveyCard(this@SurveySetActivity, resultOfSurveySets), innerPadding,intent)
                 }
             }
