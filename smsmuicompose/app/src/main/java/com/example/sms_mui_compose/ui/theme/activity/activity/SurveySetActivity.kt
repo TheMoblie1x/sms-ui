@@ -63,7 +63,7 @@ fun getSurveyCard(context: Context, result:ArrayList<SurveySet>):List<ImageCardD
 fun onSurveyItemClick(context:Context, index: Int) {
     val intent  = Intent(context, SurveyActivity::class.java)
     val surveySet = resultOfSurveySets[index]
-    lateinit var resultOfSurveySets:List<SurveySet>
+    var resultOfSurveySets:List<SurveySet> = emptyList()
     GlobalScope.launch {
         //TODO:FIXME
 //        resultOfSurveySets = withContext(Dispatchers.IO){
