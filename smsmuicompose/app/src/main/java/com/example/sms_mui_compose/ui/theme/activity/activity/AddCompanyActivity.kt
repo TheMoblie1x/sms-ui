@@ -42,7 +42,7 @@ class AddCompanyActivity : ComponentActivity() {
                             ) {
                                 OutlinedButton(onClick = { /*TODO*/ }) {
                                     Text(
-                                        text = "Click Me",
+                                        text = "Add Company",
                                         color = Color.Blue,
                                         fontSize = 18.sp
                                     )
@@ -73,7 +73,7 @@ fun AddCompanyActivityPreview(){
                 ) {
                     OutlinedButton(onClick = { /*TODO*/ }) {
                         Text(
-                            text = "Click Me",
+                            text = "Add Company",
                             color = Color.Blue,
                             fontSize = 18.sp
                         )

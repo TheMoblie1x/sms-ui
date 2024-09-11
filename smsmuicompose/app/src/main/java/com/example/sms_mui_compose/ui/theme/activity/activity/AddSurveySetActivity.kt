@@ -36,7 +36,7 @@ class AddSurveySetActivity : ComponentActivity() {
                             Box {
                                 OutlinedButton(onClick = { /*TODO*/ }) {
                                     Text(
-                                        text = "Click Me",
+                                        text = "Add Survey Set",
                                         color = Color.Blue,
                                         fontSize = 18.sp
                                     )
@@ -65,7 +65,7 @@ fun AddSurveySetActivityPreview(){
                     ) {
                         OutlinedButton(onClick = { /*TODO*/ }) {
                             Text(
-                                text = "Click Me",
+                                text = "Add Survey Set",
                                 color = Color.Blue,
                                 fontSize = 18.sp
                             )

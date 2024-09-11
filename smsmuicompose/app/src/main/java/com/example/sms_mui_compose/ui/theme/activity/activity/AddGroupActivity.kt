@@ -43,7 +43,7 @@ class AddGroupActivity : ComponentActivity() {
                                     onClick = { /*TODO*/ },
                                 ) {
                                     Text(
-                                        text = "Click Me",
+                                        text = "Add Group",
                                         color = Color.Blue,
                                         fontSize = 18.sp
                                     )
@@ -77,7 +77,7 @@ fun ui(){
                             onClick = { /*TODO*/ },
                         ) {
                             Text(
-                                text = "Click Me",
+                                text = "Add Group",
                                 color = Color.Blue,
                                 fontSize = 18.sp
                             )
