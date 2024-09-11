@@ -19,7 +19,8 @@ class AddCompanyActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SmsmuicomposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()
+                , topBar = { TopBar("Add Company",{finish()}) }) { innerPadding ->
                     Greeting10(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)

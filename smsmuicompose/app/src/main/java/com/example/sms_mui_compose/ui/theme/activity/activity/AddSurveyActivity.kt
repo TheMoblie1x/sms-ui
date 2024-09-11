@@ -19,7 +19,7 @@ class AddSurveyActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SmsmuicomposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Survey",{finish()}) }) { innerPadding ->
                     Greeting7(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
