@@ -4,15 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,17 +30,24 @@ class AddGroupActivity : ComponentActivity() {
         setContent {
             SmsmuicomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Group",{finish()}) }) { innerPadding ->
-                    Column (modifier = Modifier.padding(innerPadding)) {
+                    Column (modifier = Modifier.padding(innerPadding),) {
                         CTextField("Group Name")
                         CTextField("Group Id")
                         CTextField("Creation Time")
                         Box {
-                            OutlinedButton(onClick = { /*TODO*/ }) {
-                                Text(
-                                    text = "Click Me",
-                                    color = Color.Blue,
-                                    fontSize = 18.sp
-                                )
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                OutlinedButton(
+                                    onClick = { /*TODO*/ },
+                                ) {
+                                    Text(
+                                        text = "Click Me",
+                                        color = Color.Blue,
+                                        fontSize = 18.sp
+                                    )
+                                }
                             }
 
                         }
@@ -59,12 +69,19 @@ fun ui(){
                 CTextField("Survey Id")
                 CTextField("Creation Time")
                 Box {
-                    OutlinedButton(onClick = { /*TODO*/ }) {
-                        Text(
-                            text = "Click Me",
-                            color = Color.Blue,
-                            fontSize = 18.sp
-                        )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        OutlinedButton(
+                            onClick = { /*TODO*/ },
+                        ) {
+                            Text(
+                                text = "Click Me",
+                                color = Color.Blue,
+                                fontSize = 18.sp
+                            )
+                        }
                     }
 
                 }

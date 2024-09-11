@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedButton
@@ -34,6 +36,10 @@ class AddSurveyActivity : ComponentActivity() {
                         CTextField("Survey Id")
                         CTextField("Creation Time")
                         Box {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.Center
+                            ){
                             OutlinedButton(onClick = { /*TODO*/ }) {
                                 Text(
                                     text = "Click Me",
@@ -41,7 +47,7 @@ class AddSurveyActivity : ComponentActivity() {
                                     fontSize = 18.sp
                                 )
                             }
-
+                            }
                         }
                     }
                 }
@@ -60,14 +66,18 @@ fun AddSurveyPreview() {
                 CTextField("Survey Id")
                 CTextField("Creation Time")
                 Box {
-                    OutlinedButton(onClick = { /*TODO*/ }) {
-                        Text(
-                            text = "Click Me",
-                            color = Color.Blue,
-                            fontSize = 18.sp
-                        )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        OutlinedButton(onClick = { /*TODO*/ }) {
+                            Text(
+                                text = "Click Me",
+                                color = Color.Blue,
+                                fontSize = 18.sp
+                            )
+                        }
                     }
-
                 }
             }
         }
