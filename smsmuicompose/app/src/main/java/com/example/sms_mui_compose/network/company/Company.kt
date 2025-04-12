@@ -4,12 +4,12 @@ import android.os.Parcel
 import android.os.Parcelable
 
 public class Company() : Parcelable {
-    lateinit var companyId:String
-    lateinit var contactInfo:String
-    lateinit var name:String
-    lateinit var location:String
-    lateinit var email:String
-    lateinit var address:String
+    var companyId:String = ""
+    var contactInfo:String = ""
+    var name:String= ""
+    var location:String= ""
+    var email:String= ""
+    var address:String= ""
 
     constructor(parcel: Parcel) : this() {
         companyId = parcel.readString().toString()

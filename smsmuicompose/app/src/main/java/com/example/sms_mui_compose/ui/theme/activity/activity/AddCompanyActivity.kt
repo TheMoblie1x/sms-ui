@@ -40,7 +40,7 @@ class AddCompanyActivity : ComponentActivity() {
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.Center
                             ) {
-                                OutlinedButton(onClick = { /*TODO*/ }) {
+                                OutlinedButton(onClick = { /*TODO: Call teh API here to add the company*/ }) {
                                     Text(
                                         text = "Add Company",
                                         color = Color.Blue,
