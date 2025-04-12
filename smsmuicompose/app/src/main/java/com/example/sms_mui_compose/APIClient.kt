@@ -6,7 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 class APIClient {
     companion object RetrofitInstance {
         fun get():Retrofit{
-            return Retrofit.Builder().baseUrl("http://35.154.109.58:8080/").addConverterFactory(
+//            return Retrofit.Builder().baseUrl("http://35.154.109.58:8080/").addConverterFactory(
+//                GsonConverterFactory.create()).build()
+            return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(
                 GsonConverterFactory.create()).build()
         }
 
