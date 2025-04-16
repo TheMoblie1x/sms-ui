@@ -33,14 +33,14 @@ class AddCompanyActivity : ComponentActivity() {
 
                     Column (modifier = Modifier.padding(innerPadding)) {
                         CTextField("Company Name")
-                        CTextField("Company Id")
-                        CTextField("Creation Time")
+//                        CTextField("Company Id") // Company id will be auto assigned by the system
+//                        CTextField("Creation Time") // creation time too will be auto assigned by the system
                         Box {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.Center
                             ) {
-                                OutlinedButton(onClick = { /*TODO: Call teh API here to add the company*/ }) {
+                                OutlinedButton(onClick = { /*TODO: Call the API here to add the company*/ }) {
                                     Text(
                                         text = "Add Company",
                                         color = Color.Blue,
@@ -64,8 +64,8 @@ fun AddCompanyActivityPreview(){
         , topBar = { TopBar("Add Company",{null}) }) { innerPadding ->
         Column (modifier = Modifier.padding(innerPadding)) {
             CTextField("Company Name")
-            CTextField("Company Id")
-            CTextField("Creation Time")
+//            CTextField("Company Id")
+//            CTextField("Creation Time")
             Box {
                 Row(
                     modifier = Modifier.fillMaxWidth(),

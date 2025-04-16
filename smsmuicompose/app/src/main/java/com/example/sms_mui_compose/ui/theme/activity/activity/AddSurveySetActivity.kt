@@ -31,8 +31,8 @@ class AddSurveySetActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Survey Set",{finish()}) }) { innerPadding ->
                         Column (modifier = Modifier.padding(innerPadding)) {
                             CTextField("Survey Set Name")
-                            CTextField("Survey Set Id")
-                            CTextField("Creation Time")
+//                            CTextField("Survey Set Id") //Survey Set id is auto generated
+//                            CTextField("Creation Time") //Creation time of the survey is also auto generated
                             Box {
                                 OutlinedButton(onClick = { /*TODO*/ }) {
                                     Text(
@@ -56,8 +56,8 @@ fun AddSurveySetActivityPreview(){
         Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Survey Set",{null}) }) { innerPadding ->
             Column (modifier = Modifier.padding(innerPadding)) {
                 CTextField("Survey Set Name")
-                CTextField("Survey Set Id")
-                CTextField("Creation Time")
+//                CTextField("Survey Set Id") // this needs to be removed since the id is auto assigned by the system
+//                CTextField("Creation Time") and also survey creation time is also taken by the system
                 Box {
                     Row(
                         modifier = Modifier.fillMaxWidth(),

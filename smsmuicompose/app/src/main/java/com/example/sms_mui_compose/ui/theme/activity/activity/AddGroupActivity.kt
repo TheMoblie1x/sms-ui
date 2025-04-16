@@ -32,8 +32,8 @@ class AddGroupActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Group",{finish()}) }) { innerPadding ->
                     Column (modifier = Modifier.padding(innerPadding),) {
                         CTextField("Group Name")
-                        CTextField("Group Id")
-                        CTextField("Creation Time")
+//                        CTextField("Group Id") //Removing Group id since it is auto assigned by the system
+//                        CTextField("Creation Time") //removing creation time from here since it is also auto created by the system
                         Box {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
@@ -65,8 +65,8 @@ fun ui(){
     SmsmuicomposeTheme {
         Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Group",{ null }) }) { innerPadding ->
             Column (modifier = Modifier.padding(innerPadding)) {
-                CTextField("Survey Name")
-                CTextField("Survey Id")
+//                CTextField("Survey Name")
+//                CTextField("Survey Id")
                 CTextField("Creation Time")
                 Box {
                     Row(
