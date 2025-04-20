@@ -55,11 +55,11 @@ class FormEditorActivity : ComponentActivity() {
 fun FormEditorUI(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Text("Welcome to the Form Editor Activity")
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         TextInputWithAIButton(QuestionsListViewModel())
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         QuestionList(QuestionsDummyData().getQuestionsData())
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         Button(onClick = { /*TODO*/ }) {
             Text("Submit")
         }
