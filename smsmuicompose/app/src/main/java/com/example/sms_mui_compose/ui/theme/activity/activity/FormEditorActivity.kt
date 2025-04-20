@@ -78,7 +78,7 @@ fun QuestionList(questions: List<Question>) {
                 selectedAnswer = question.selectedAnswer,
                 onAnswerSelected = { question.onClickListener }
             )
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(4.dp))
         }
     }
 }
