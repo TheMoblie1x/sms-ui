@@ -1,5 +1,6 @@
 package com.example.sms_mui_compose.ui.theme.activity.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,18 +22,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import com.example.sms_mui_compose.ui.theme.activity.components.CTextField
 import com.example.sms_mui_compose.ui.theme.activity.ui.theme.SmsmuicomposeTheme
 
 class AddSurveyActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
             SmsmuicomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = { TopBar("Add Survey",{finish()}) }) { innerPadding ->
                     Column (modifier = Modifier.padding(innerPadding)) {
                         CTextField("Survey Name")
+                        var startintent= Intent(this@AddSurveyActivity, FormEditorActivity::class.java)
 //                        CTextField("Survey Id") //Survey id is auto gen
 //                        CTextField("Creation Time") // Creation time is auto gen
                         Box {
@@ -40,7 +46,7 @@ class AddSurveyActivity : ComponentActivity() {
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.Center
                             ){
-                            OutlinedButton(onClick = { /*TODO*/ }) {
+                            OutlinedButton(onClick = { /*TODO*/ startActivity(startintent) }) {
                                 Text(
                                     text = "Add Survey",
                                     color = Color.Blue,
