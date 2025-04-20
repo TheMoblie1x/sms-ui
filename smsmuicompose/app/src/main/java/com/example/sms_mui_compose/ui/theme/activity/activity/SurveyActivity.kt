@@ -7,19 +7,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sms_mui_compose.imageLinks
-import com.example.sms_mui_compose.network.company.Company
 import com.example.sms_mui_compose.network.survey.Survey
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
-import com.example.sms_mui_compose.ui.theme.activity.activity.CompaniesActivity
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageGrid
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageCardData
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageGrid
 
 
 class SurveyActivity :ComponentActivity() {

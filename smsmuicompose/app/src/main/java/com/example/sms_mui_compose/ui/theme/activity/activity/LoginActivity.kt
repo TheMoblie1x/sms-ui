@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import com.example.sms_mui_compose.network.company.Company
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
-import com.example.sms_mui_compose.ui.theme.activity.components.CTextField
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.CTextField
 
 class MainActivity : ComponentActivity() {
     lateinit var allCompaniesList : List<Company>

@@ -2,7 +2,7 @@ package com.example.sms_mui_compose
 
 import android.content.Context
 import android.widget.Toast.makeText
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageCardData
 import com.example.sms_mui_compose.ui.theme.activity.activity.onClick
 
 class Constants {

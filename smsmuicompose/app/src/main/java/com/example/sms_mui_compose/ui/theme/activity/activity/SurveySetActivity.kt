@@ -15,8 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.sms_mui_compose.imageLinks
 import com.example.sms_mui_compose.network.surveyset.SurveySet
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageGrid
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageCardData
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageGrid
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

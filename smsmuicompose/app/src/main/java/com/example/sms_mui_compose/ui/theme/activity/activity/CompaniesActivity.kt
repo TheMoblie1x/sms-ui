@@ -22,8 +22,8 @@ import com.example.sms_mui_compose.imageLinks
 import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.company.Company
 import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageCardData
-import com.example.sms_mui_compose.ui.theme.activity.components.ImageGrid
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageCardData
+import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

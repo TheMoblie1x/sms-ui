@@ -1,4 +1,4 @@
-package com.example.sms_mui_compose.ui.theme.activity.components
+package com.example.sms_mui_compose.ui.theme.activity.activity.composables.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
