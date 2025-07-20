@@ -8,7 +8,8 @@ import com.example.sms_mui_compose.ui.theme.activity.activity.onClick
 class Constants {
 //    var BASE_URL = "http://35.154.109.58:8080/"
     companion object{
-    val BASE_URL = "http://13.201.85.182:8080"
+//    val BASE_URL = "http://13.201.85.182:8080"
+    val BASE_URL = "http://13.127.179.140:8080"
 
     }
     var GET_CEOS = "CEOs"

@@ -9,7 +9,7 @@ import com.example.sms_mui_compose.network.group.Groups
 import com.example.sms_mui_compose.network.group.GroupsAPI
 import com.example.sms_mui_compose.network.surveyset.SurveySet
 import com.example.sms_mui_compose.network.surveyset.SurveySetsAPI
-import com.example.sms_mui_compose.ui.theme.ErrorActivity
+import com.example.sms_mui_compose.ui.theme.activity.activity.ErrorActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
@@ -35,7 +35,7 @@ class GetEntityList {
     }
 
     private fun navigateToErrorScreen(context: Context) {
-        context.startActivity(Intent(context,ErrorActivity::class.java))
+        context.startActivity(Intent(context, ErrorActivity::class.java))
     }
 
     suspend fun getAllGroupsByCompany(context:Context, companyID:Int): List<Groups>? {
