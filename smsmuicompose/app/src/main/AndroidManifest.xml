@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,11 @@
         android:theme="@style/Theme.Smsmuicompose"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.theme.ErrorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_error"
+            android:theme="@style/Theme.Smsmuicompose" />
         <activity
             android:name=".ui.theme.activity.activity.FormEditorActivity"
             android:exported="false"

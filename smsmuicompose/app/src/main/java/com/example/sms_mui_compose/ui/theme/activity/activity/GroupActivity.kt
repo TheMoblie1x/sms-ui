@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import com.example.sms_mui_compose.Application
 import com.example.sms_mui_compose.imageLinks
 import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.company.Company
@@ -22,6 +23,7 @@ import com.example.sms_mui_compose.ui.theme.activity.activity.composables.compon
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.ArrayList
@@ -31,11 +33,16 @@ class GroupActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val context = this
         val company = intent.extras?.get("Company") as Company
         lifecycleScope.launch {
-            resultOfGroups = withContext(Dispatchers.IO){
+            resultOfGroups = async{
                 val companyID = Integer.valueOf(company.companyId)
-                GetEntityList().getAllGroupsByCompany(companyID)
+                GetEntityList().getAllGroupsByCompany(context,companyID)
+            }.await()
+            if(resultOfGroups==null){
+                val app = application as Application
+                app.navigateToErrorScreen(this@GroupActivity)
             }
             setContent {
                 SmsmuicomposeTheme {
@@ -74,10 +81,11 @@ fun onGroupItemClick(context:Context, index: Int) {
     val group = resultOfGroups!![index]
     lateinit var resultOfSurveySets:List<SurveySet>
     GlobalScope.launch {
-        resultOfSurveySets = withContext(Dispatchers.IO){
+
+        resultOfSurveySets = async{
             val groupID = group.groupId?.let { Integer.valueOf(it) }
-            groupID?.let { GetEntityList().getSurveySetsByGroupID(it) }!!
-        }
+            groupID?.let { GetEntityList().getSurveySetsByGroupID(context,it) }!!
+        }.await()
         intent.putParcelableArrayListExtra("SurveySets", ArrayList(resultOfSurveySets))
         context.startActivity(intent)
     }

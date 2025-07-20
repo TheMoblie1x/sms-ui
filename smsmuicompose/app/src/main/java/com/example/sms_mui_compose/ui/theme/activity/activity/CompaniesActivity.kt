@@ -18,6 +18,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import com.example.sms_mui_compose.Application
 import com.example.sms_mui_compose.imageLinks
 import com.example.sms_mui_compose.network.GetEntityList
 import com.example.sms_mui_compose.network.company.Company
@@ -25,19 +26,27 @@ import com.example.sms_mui_compose.ui.theme.SmsmuicomposeTheme
 import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageCardData
 import com.example.sms_mui_compose.ui.theme.activity.activity.composables.components.ImageGrid
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
 var result:List<Company>? = null
 class CompaniesActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val context = this
+        val getEntityList = GetEntityList()
         lifecycleScope.launch {
-            result = withContext(Dispatchers.IO){
-                GetEntityList().getAllCompaniesList()
+            //Check if the network is not available redirect to some other screen
+
+            result = async{
+                getEntityList.getAllCompaniesList(context)
+            }.await()
+            if(result==null){
+                val app = application as Application
+                app.navigateToErrorScreen(this@CompaniesActivity)
             }
             setContent {
                 SmsmuicomposeTheme {
