@@ -51,6 +51,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation(libs.coil.compose)
     implementation (libs.coil.svg)
     implementation(libs.androidx.navigation.compose)

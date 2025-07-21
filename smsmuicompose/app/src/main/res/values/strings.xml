@@ -6,4 +6,7 @@
     <string name="title_activity_add_survey">AddSurveyActivity</string>
     <string name="title_activity_form_editor">FormEditorActivity</string>
     <string name="title_activity_error">ErrorActivity</string>
+    <string name="enter_the_server_ip_address">Enter the Server IP Address</string>
+    <string name="current_ip_address">Current IP Address</string>
+    <string name="save">Save</string>
 </resources>

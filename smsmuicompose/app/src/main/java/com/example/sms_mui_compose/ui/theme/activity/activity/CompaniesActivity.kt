@@ -3,6 +3,8 @@ package com.example.sms_mui_compose.ui.theme.activity.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -45,8 +47,10 @@ class CompaniesActivity : ComponentActivity() {
                 getEntityList.getAllCompaniesList(context)
             }.await()
             if(result==null){
-                val app = application as Application
-                app.navigateToErrorScreen(this@CompaniesActivity)
+//                val app = application as Application
+                //Toast.makeText(callingActivity, "Null", Toast.LENGTH_SHORT).show()
+                Log.d("Companies", "onCreate: Data is null")
+               // return;
             }
             setContent {
                 SmsmuicomposeTheme {

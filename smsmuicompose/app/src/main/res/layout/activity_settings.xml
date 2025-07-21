@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:hint="@string/current_ip_address"
+        android:layout_above="@+id/server_ip"
+        android:id="@+id/tv_current_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_centerInParent="true"
+        android:id="@+id/server_ip"
+        android:hint="@string/enter_the_server_ip_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toStartOf="@+id/server_ip"
+        android:layout_below="@id/server_ip"
+        android:text="Edit"
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_below="@id/server_ip"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save"
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
