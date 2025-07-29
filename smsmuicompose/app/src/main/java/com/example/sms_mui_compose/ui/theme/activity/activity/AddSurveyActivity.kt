@@ -104,7 +104,7 @@ fun AddSurveyPreview() {
 
 
 
-sealed class Question(
+open class Question(
     val id: String,
     val text: String,
     val type: QuestionType
